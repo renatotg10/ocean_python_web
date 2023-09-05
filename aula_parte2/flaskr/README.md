@@ -43,6 +43,20 @@ Neste caso, as duas variáveis de ambiente definidas no `.flaskenv` são:
 
 Em resumo, o `.flaskenv` é usado para configurar as variáveis de ambiente específicas do Flask, tornando o processo de desenvolvimento mais conveniente e eficiente. Certifique-se de que o Flask seja compatível com o uso do arquivo `.flaskenv` para carregar essas configurações automaticamente, pois essa funcionalidade pode variar dependendo da versão do Flask ou das configurações do seu ambiente de desenvolvimento.
 
+
+### Script SQL para criação da tabela `entradas`
+
+Na pasta raiz do projeto, crie um arquivo com nome `esquema.sql` e adicione o conteúdo abaixo nele:
+
+```sql
+drop table if exists entradas;
+create table entradas (
+  id integer primary key autoincrement,
+  titulo string not null,
+  texto string not null
+);
+```
+
 ### `flaskr.py`:
 
 ```python
@@ -356,8 +370,20 @@ Para executar a aplicação Flaskr, siga estas etapas:
    ```bash
    pip install Flask
    ```
+2. Crie o arquivo de banco de dados SQLite `flaskr.db`.
 
-2. Execute o arquivo `flaskr.py`.
+Acesse o console do Python, para isso, no terminal digite o comando `python` e pressione enter. Ao acessar o console do Python, o propmt do terminal irá ficar com o símbolo `>>>`.
+
+Para criar o arquivo do banco de dados `/tmp/flaskr.db`, você deve chamar explicitamente a função `criar_bd()`. No console do Python execute os seguintes comandos:
+
+```python
+from flaskr import criar_bd
+criar_bd()
+```
+
+Certifique-se de que o arquivo 'esquema.sql' esteja presente no mesmo diretório em que o arquivo `flaskr.py` está localizado e que não contenha erros de sintaxe SQL. Após a execução desses comandos, o arquivo `/tmp/flaskr.db` deve ser criado com base no conteúdo do arquivo 'esquema.sql'. Certifique-se de verificar se o diretório `/tmp` existe no sistema de arquivos e se você tem permissões de escrita nele.
+
+3. Execute o arquivo `flaskr.py`.
 
    ```bash
    python flaskr.py
