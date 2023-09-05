@@ -18,9 +18,20 @@ blog_posts = [
     }
 ]
 
+# Rota para a página inicial
 @app.route('/')
 def index():
     return render_template('index.html', posts=blog_posts)
+
+# Rota para a página "Sobre"
+@app.route('/sobre')
+def sobre():
+    return render_template('sobre.html')
+
+# Rota para a página "Contato"
+@app.route('/contato')
+def contato():
+    return render_template('contato.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
