@@ -1,5 +1,6 @@
 # Aplicação Flaskr - Blog Simples
 04/09/2023 - Renato Teixeira Gomes - renatotg10@gmail.com
+
 Documento elaborado com auxílio do ChatGPT (https://chat.openai.com/)
 
 ### Documentação original do projeto da aplicação Flaskr
