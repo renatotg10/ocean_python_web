@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meu Blog</title>
+</head>
+<body>
+    <h1>Bem-vindo ao Meu Blog</h1>
+    
+    <ul>
+        {% for post in posts %}
+            <li>
+                <h2>{{ post['titulo'] }}</h2>
+                <p>{{ post['texto'] }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
