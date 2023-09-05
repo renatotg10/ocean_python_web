@@ -1,4 +1,9 @@
 # Aplicação Flaskr - Blog Simples
+04/09/2023 - Renato Teixeira Gomes - renatotg10@gmail.com
+Documento elaborado com auxílio do ChatGPT (https://chat.openai.com/)
+
+### Documentação original do projeto da aplicação Flaskr
+http://turing.com.br/material/flask/tutorial/introduction.html
 
 ## Visão Geral
 
@@ -372,16 +377,16 @@ Para executar a aplicação Flaskr, siga estas etapas:
    ```
 2. Crie o arquivo de banco de dados SQLite `flaskr.db`.
 
-Acesse o console do Python, para isso, no terminal digite o comando `python` e pressione enter. Ao acessar o console do Python, o propmt do terminal irá ficar com o símbolo `>>>`.
+  Acesse o console do Python, para isso, no terminal digite o comando `python` e pressione enter. Ao acessar o console do Python, o propmt do terminal irá ficar com o símbolo `>>>`.
 
-Para criar o arquivo do banco de dados `/tmp/flaskr.db`, você deve chamar explicitamente a função `criar_bd()`. No console do Python execute os seguintes comandos:
+  Para criar o arquivo do banco de dados `/tmp/flaskr.db`, você deve chamar explicitamente a função `criar_bd()`. No console do Python execute os seguintes comandos:
 
-```python
-from flaskr import criar_bd
-criar_bd()
-```
+  ```python
+  from flaskr import criar_bd
+  criar_bd()
+  ```
 
-Certifique-se de que o arquivo 'esquema.sql' esteja presente no mesmo diretório em que o arquivo `flaskr.py` está localizado e que não contenha erros de sintaxe SQL. Após a execução desses comandos, o arquivo `/tmp/flaskr.db` deve ser criado com base no conteúdo do arquivo 'esquema.sql'. Certifique-se de verificar se o diretório `/tmp` existe no sistema de arquivos e se você tem permissões de escrita nele.
+  Certifique-se de que o arquivo 'esquema.sql' esteja presente no mesmo diretório em que o arquivo `flaskr.py` está localizado e que não contenha erros de sintaxe SQL. Após a execução desses comandos, o arquivo `/tmp/flaskr.db` deve ser criado com base no conteúdo do arquivo 'esquema.sql'. Certifique-se de verificar se o diretório `/tmp` existe no sistema de arquivos e se você tem permissões de escrita nele.
 
 3. Execute o arquivo `flaskr.py`.
 
