@@ -371,12 +371,12 @@ h2              { font-size: 1.2em; }
 
 Para executar a aplicação Flaskr, siga estas etapas:
 
-\1. Certifique-se de ter o Flask instalado em seu ambiente de desenvolvimento.
+1 - Certifique-se de ter o Flask instalado em seu ambiente de desenvolvimento.
 
    ```bash
    pip install Flask
    ```
-\2. Crie o arquivo de banco de dados SQLite `flaskr.db`.
+2 - Crie o arquivo de banco de dados SQLite `flaskr.db`.
 
   Acesse o console do Python, para isso, no terminal digite o comando `python` e pressione enter. Ao acessar o console do Python, o propmt do terminal irá ficar com o símbolo `>>>`.
 
@@ -389,7 +389,7 @@ Para executar a aplicação Flaskr, siga estas etapas:
 
   Certifique-se de que o arquivo 'esquema.sql' esteja presente no mesmo diretório em que o arquivo `flaskr.py` está localizado e que não contenha erros de sintaxe SQL. Após a execução desses comandos, o arquivo `/tmp/flaskr.db` deve ser criado com base no conteúdo do arquivo 'esquema.sql'. Certifique-se de verificar se o diretório `/tmp` existe no sistema de arquivos e se você tem permissões de escrita nele.
 
-\3. Execute o arquivo `flaskr.py`.
+3 - Execute o arquivo `flaskr.py`.
 
    ```bash
    python flaskr.py
