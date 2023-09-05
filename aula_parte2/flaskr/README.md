@@ -1,5 +1,3 @@
-Entendi, vou criar um README.md detalhado, incluindo os códigos completos dos arquivos fornecidos. Vou dividi-lo em seções para facilitar a compreensão:
-
 # Aplicação Flaskr - Blog Simples
 
 ## Visão Geral
