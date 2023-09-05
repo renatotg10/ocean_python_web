@@ -1,4 +1,4 @@
-# Blog em Flask
+# Aplicação Web com Flask
 
 Este é um exemplo simples de um aplicativo web usando o framework Flask em Python. O aplicativo cria um blog básico com três postagens de blog de exemplo e três páginas: Página Inicial, Sobre e Contato.
 

@@ -1,2 +1,2 @@
-FLASK_APP=app.py
+FLASK_APP=flaskr.py
 FLASK_DEBUG=1
