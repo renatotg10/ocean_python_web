@@ -4,7 +4,7 @@
 Documento elaborado com auxílio do ChatGPT (https://chat.openai.com/)
 
 ### Documentação original do projeto da aplicação Flaskr
-http://turing.com.br/material/flask/tutorial/introduction.html
+- http://turing.com.br/material/flask/tutorial/introduction.html
 
 ## Visão Geral
 
