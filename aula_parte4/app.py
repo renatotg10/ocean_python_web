@@ -23,10 +23,11 @@ def encerrar_requisicao(exception):
 
 @app.route('/')
 def exibir_entradas():
-    sql = "SELECT titulo, texto, data_criacao FROM posts ORDER BY id DESC"
+    sql = "SELECT id, titulo, texto, data_criacao FROM posts ORDER BY id DESC"
     resultado = g.bd.execute(sql)
     entradas = resultado.fetchall()
     return render_template('exibir_entradas.html', entradas=entradas)
+
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
@@ -67,3 +68,17 @@ def exibir_entrada(id):
         return render_template('exibir_entrada.html', entrada=entrada)
     except Exception:
         return abort(404)
+
+@app.route('/excluir/<int:id>', methods=["POST"])
+def excluir_entrada(id):
+    if session.get('logado'):
+        # Aqui você pode adicionar lógica para verificar se o usuário logado tem permissão para excluir a postagem (por exemplo, verificar se o autor da postagem é o usuário logado).
+        
+        # Execute a consulta SQL para excluir a postagem pelo ID
+        sql = "DELETE FROM posts WHERE id = ?"
+        g.bd.execute(sql, (id,))
+        g.bd.commit()
+        
+        flash("Postagem excluída com sucesso!")
+    
+    return redirect(url_for('exibir_entradas'))
