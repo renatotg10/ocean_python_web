@@ -1,6 +1,5 @@
 {% extends "layout.html" %}
 
-
 {% block corpo %}
     {% if session.logado %}
         <form action="{{ url_for('inserir_entradas') }}" method="post" class="ins-entrada">
@@ -17,8 +16,8 @@
     <ul class="entradas">
         {% for entrada in entradas %}
         <li>
-            <a href="{{ url_for('exibir_entrada', id=loop.revindex) }}"><h2>{{ entrada.titulo }}</h2></a>
-            {{ entrada.texto |safe | truncate(140) }}
+            <a href="{{ url_for('exibir_entrada', id=loop.revindex) }}"><h2>{{ entrada[0] }}</h2></a>
+            {{ entrada[1] | safe | truncate(140) }}
         </li>
         {% else %}
             <li><em>Inacreditável. Até agora nenhuma entrada.</em></li>

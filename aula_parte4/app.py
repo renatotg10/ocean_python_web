@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, session, abort, flash, redirect, url_for
+from flask import Flask, render_template, request, session, abort, flash, redirect, url_for, g
 from posts import posts
 import sqlite3
+import datetime  # Importe datetime aqui
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'pudim'
@@ -14,7 +15,7 @@ def conectar():
 
 @app.before_request
 def pre_requisicao():
-    g.bd = conectar_bd()
+    g.bd = conectar()
 
 @app.teardown_request
 def encerrar_requisicao(exception):
@@ -22,13 +23,9 @@ def encerrar_requisicao(exception):
 
 @app.route('/')
 def exibir_entradas():
-    # entradas = posts[::-1] # Mock das postagens
-
-    entrada =n[]
-
     sql = "SELECT titulo, texto, data_criacao FROM posts ORDER BY id DESC"
     resultado = g.bd.execute(sql)
-
+    entradas = resultado.fetchall()
     return render_template('exibir_entradas.html', entradas=entradas)
 
 @app.route('/login', methods=["GET", "POST"])
@@ -50,14 +47,18 @@ def logout():
 
 @app.route('/inserir', methods=["POST"])
 def inserir_entradas():
-    if session['logado']:
-        novo_post = {
-            "titulo": request.form['titulo'],
-            "texto": request.form['texto']
-        }
-        posts.append(novo_post)
+    if session.get('logado'):
+        titulo = request.form['titulo']
+        texto = request.form['texto']
+        data_criacao = datetime.datetime.now()  # Importe datetime se não o fez
+
+        sql = "INSERT INTO posts (titulo, texto, data_criacao) VALUES (?, ?, ?)"
+        g.bd.execute(sql, (titulo, texto, data_criacao))
+        g.bd.commit()
+
         flash("Post criado com sucesso!")
     return redirect(url_for('exibir_entradas'))
+
 
 @app.route('/posts/<int:id>')
 def exibir_entrada(id):
